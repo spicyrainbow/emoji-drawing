@@ -1,0 +1,46 @@
+
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+<!-- 
+for your own code -->
+<script> 
+/*global nn*/
+  
+  function emoji () {
+    requestAnimationFrame(emoji)
+    
+    const emojis = [
+      '🌳', '🌸', '🌷','*','🏡','🪵','🐥','🍃','🐇','花'
+    ]
+    const ranEmoji = nn.random(emojis)
+    const css = {
+      position: 'absolute',
+      left: nn.mouseX,
+      top: nn.mouseY
+    }
+  
+    // }
+    // if 
+    // nn.create('span')
+    //   .content(ranEmoji)
+    // const css = {
+    //   position: 'absolute',
+    //   left: nn.random(nn.width),
+    //   top: nn.random(nn.height),
+    // })
+  
+   if (nn.mouseDown) {
+     nn.create('span')
+     .content(ranEmoji)
+     .css(css)
+    .addTo('body')
+    
+    }
+  }
+  
+  nn.on('load', emoji)
+  
+
+</script>
+
+
+
